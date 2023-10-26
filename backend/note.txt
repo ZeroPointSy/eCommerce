@@ -1,0 +1,2 @@
+This is eCommerce backend folder
+The note has been added so that the folder appears

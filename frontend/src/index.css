@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 *,
 #root {
@@ -7,13 +7,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bs-primary-rgb: 23, 68, 118;
+  --bs-secondary-rgb: 170, 176, 231;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .grad {
   background: rgb(226, 27, 27);
   background: linear-gradient(36deg, rgba(226, 27, 27, 1) 0%, rgba(252, 242, 15, 1) 100%);
+}
+
+.text-black-50 {
+  color: #AAB0E7 !important;
 }
 
 .shad {
@@ -24,11 +33,7 @@ body {
   color: #174476;
 }
 
-.bg-blue {
-  background-color: #0F3A69;
-  border: 1px solid #0F3A69;
-}
 
-.bg-blue:hover {
-  background-color: #0c2f53;
+.fs-sm {
+  font-size: 0.81568rem;
 }

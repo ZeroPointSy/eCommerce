@@ -21,5 +21,9 @@ class AuthController extends Controller
             'logged out',
             Response::HTTP_OK
         );
+
+
+
+
     }
 }

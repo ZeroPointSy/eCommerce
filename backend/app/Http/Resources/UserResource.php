@@ -18,6 +18,9 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'full_name' => $this->full_name,
             'phone_number' => $this->phone_number,
+            'accessToken' => $this->when($this->accessToken, function () {
+                return $this->accessToken;
+            }),
         ];
     }
 }

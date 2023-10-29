@@ -19,7 +19,8 @@ class AuthController extends Controller
     public function register()
     {
         $data = request()->all();
-        $data->role_id = RoleEnum::USER->value;
+        $data['role_id'] = RoleEnum::USER->value;
+
 
         $user = $this->userService->store(
             UserData::from($data)

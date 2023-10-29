@@ -12,5 +12,6 @@ class UserData extends Data
         public string|Optional $phone_number,
         public string|Optional $password,
         public string|Optional $full_name,
+        public int|Optional $role_id,
     ) {}
 }

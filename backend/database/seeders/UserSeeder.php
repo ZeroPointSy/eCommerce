@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\RoleEnum;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,7 +17,8 @@ class UserSeeder extends Seeder
     {
         User::updateOrCreate([
             'email' => 'admin@admin.com',
-            'password' => Hash::make('12345678')
+            'password' => Hash::make('12345678'),
+            'role_id' => RoleEnum::ADMIN->value
         ]);
     }
 }

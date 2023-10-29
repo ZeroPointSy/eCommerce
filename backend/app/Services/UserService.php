@@ -9,7 +9,8 @@ class UserService
 {
     public function getByCredentials(UserData $userData)
     {
-        if (auth()->attempt($userData->only('username', 'password')->toArray())) {
+//        dd($userData->toArray());
+        if (auth()->attempt($userData->only('email', 'password')->toArray())) {
             return auth()->user();
         }
         return null;
@@ -31,6 +32,7 @@ class UserService
 
     public function grantAuthToken(User $user)
     {
+
         $user['accessToken'] = $user->createToken('Api Token', [$user->role->name])->accessToken;
         return $user;
     }

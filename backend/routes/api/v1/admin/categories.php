@@ -1,7 +1,8 @@
 <?php
 
-
-
+use App\Http\Controllers\Api\V1\Admin\CategoryController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('category')->group(function () {
     Route::get('index' , [CategoryController::class,'index']);

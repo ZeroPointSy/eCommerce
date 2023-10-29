@@ -18,6 +18,7 @@ class CategoryController extends Controller
 
     public function index()
     {
+
         $categories = $this->categoryService->get();
 
         return response()->json(

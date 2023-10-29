@@ -32,7 +32,6 @@ class UserService
 
     public function grantAuthToken(User $user)
     {
-
         $user['accessToken'] = $user->createToken('Api Token', [$user->role->name])->accessToken;
         return $user;
     }

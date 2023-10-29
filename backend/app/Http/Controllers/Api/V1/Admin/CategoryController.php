@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Data\CategoryData;
 use Illuminate\Http\Request;
+use App\Services\CategoryService;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\CategoryResource;
+use App\Http\Requests\Api\V1\Admin\Category\StoreCategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -12,7 +17,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $this->categryService->get();
+        $categories = $this->categoryService->get();
 
         return response()->json(
             CategoryResource::collection($categories)

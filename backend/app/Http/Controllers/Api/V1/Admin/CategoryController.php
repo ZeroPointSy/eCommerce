@@ -9,10 +9,11 @@ use App\Services\CategoryService;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
 use App\Http\Requests\Api\V1\Admin\Category\StoreCategoryRequest;
+use App\Http\Requests\Api\V1\Admin\Category\UpdateCategoryRequest;
 
 class CategoryController extends Controller
 {
-    public function __construct(public CategoryService $categoyrService){}
+    public function __construct(public CategoryService $categoryService){}
 
 
     public function index()
@@ -31,7 +32,7 @@ class CategoryController extends Controller
         );
     }
 
-    public function store(StoreCategoryRequest $reqeust)
+    public function store(StoreCategoryRequest $request)
     {
         $validated = $request->validated();
 
@@ -42,7 +43,7 @@ class CategoryController extends Controller
         );
     }
 
-    public function update(Category $category,UpdateCategoryRequest $reqeust)
+    public function update(Category $category, UpdateCategoryRequest $request)
     {
         $validated = $request->validated();
 

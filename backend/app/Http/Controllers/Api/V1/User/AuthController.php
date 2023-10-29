@@ -16,25 +16,6 @@ class AuthController extends Controller
     )
     {
     }
-
-    public function login()
-    {
-        $user = $this->userService->getByCredentials(
-            UserData::from(request()->all())
-        );
-        if (!$user || $user->role_id != RoleEnum::USER->value) {
-            return response()->json(
-                'Invalid',
-                Response::HTTP_UNPROCESSABLE_ENTITY
-            );
-        }
-        $user = $this->userService->grantAuthToken($user);
-        return response()->json(
-            UserResource::make($user),
-            Response::HTTP_OK
-        );
-    }
-
     public function register()
     {
         $data = request()->all();
